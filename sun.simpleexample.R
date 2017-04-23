@@ -1,3 +1,3 @@
 
 sunlight = read.table("sun.txt", header=T)
-ls()
+boxplot(sunlight$Kdown_direct~sunlight$month)
