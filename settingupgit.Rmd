@@ -62,6 +62,7 @@ Lets start by assuming you've set up the project as described above
 * Make a change to ** sun.simpleexample.R **
 * Use diff to see what changed 
      * you must save the file first
+     * note that this file now has an **M** denoting it   has been modified, stage it
 * Commit changes
 * Use history to see how things have changed 
 * Make some more changes to ** sun.simpleexample.R **
