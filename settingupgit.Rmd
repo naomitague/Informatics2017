@@ -1,8 +1,8 @@
 ---
 title: "gitsetup"
 output:
-  pdf_document: default
   html_document: default
+  pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -45,6 +45,7 @@ If you are using a newer version of MacOS, you may also need to install X-quartz
 <https://www.xquartz.org/>
 
 You will need to re-start R 
+
 # Git - how to use version control with your project
 
 R studio links nicely with git; you can use git to track changes both locally and in the remote repository
@@ -74,7 +75,7 @@ Lets start by assuming you've set up the project as described above
 * get the http **address** from your github repo
 * Open a shell in Git tab in Rstudio
 
-type
+
 
 *git remote add origin* **address**  
 
