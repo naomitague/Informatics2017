@@ -3,10 +3,10 @@ title: "Rmarkdown"
 author: "Naomi"
 date: '`r format(Sys.time(), "%Y-%m-%d")`'
 output:
-  slidy_presentation: null
-  ioslides_presentation: default
   pdf_document: default
+  ioslides_presentation: default
   html_document: default
+  slidy_presentation: null
 subtitle: Environmental Informatics
 ---
 
@@ -228,7 +228,7 @@ barplot(sun.avg$Kdown_direct, names=sun.avg$Group.1, ylab="Mean Monthly Solar Ra
 
 ```
 
-# Assigment
+# Assignment
 
 Given a climate data set (clim.txt), 
 do the following tasks and document your work in an R-markdown document and store it in your repository- add the name of the repository to gauchospace

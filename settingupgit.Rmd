@@ -1,8 +1,9 @@
 ---
 title: "gitsetup"
 output:
-  html_document: default
   pdf_document: default
+  html_document: default
+  slidy_presentation: null
 ---
 
 ```{r setup, include=FALSE}
@@ -52,7 +53,7 @@ R studio links nicely with git; you can use git to track changes both locally an
 
 Lets start by assuming you've set up the project as described above
 
-## Tracking things locally with git - example
+# Tracking things locally with git - example
 
 * download and open the following files and save to your project directory
   *  **sun.simpleexample.R**
