@@ -3,119 +3,124 @@ title: "Rmarkdown"
 author: "Naomi"
 date: '`r format(Sys.time(), "%Y-%m-%d")`'
 output:
-  html_document: default
+  slidy_presentation: null
+  ioslides_presentation: default
   pdf_document: default
+  html_document: default
 subtitle: Environmental Informatics
 ---
 
-## Rmarkdown
+# Reproducible research {.flexbox .vcenter}
 
-A really useful way to organize, store and present your workflow: the steps that you take in a data analysis project - from input, to analysis, to presentation
-
-# syntax 
-* headings
-* fonts
-* equations
-* inserting images
-* R code
-* linking to website
-* outputing to different formats
-
-
+<div align="center">
+<img src="../img/workflow.png" height=500>
+</div>
 
 # Rmarkdown
 
-## Inspiration {.flexbox .vcenter}
+A really useful way to organize, store and present your workflow: the steps that you take in a data analysis project - from input, to analysis, to presentation
 
 <div align="center">
-<img src="../../img/Gandrud2013_ReproducibleResearchRstudio_cover.png" height=500>
+<img src="../img/Rmarkdown.jpg" height=200>
 </div>
 
 Gandrud (2013) [Reproducible Research with R and Rstudio](http://christophergandrud.github.io/RepResR-RStudio/)
 
-## What is Rmarkdown?
-
-Rmarkdown = R + markdown
-
-- _**input**_ simple text:
-    - **markdown**: simple formatting of text (bold, links, headers, images, ...)
-    - **R**: execute chunks of code (figures, tables...)
-    
-- _**output**_ various formats:
-    - **html**: share on public website
-    - **pdf**: polished publication
-    - **docx**: share with co-authors to track changes
+# Functionality (can include)
+* text
+*   headings
+*   fonts
+* equations
+* images
+* R code
+* other code
+* links to website
+* output to different formats
 
 
-## Create a R markdown file
+# Create a R markdown file
 
 In RStudio, to menu File > New File > Rmarkdown... 
 
-Document, HTML. Knit HMTL button to render the right.
+ Knit HMTL button to render 
 
 
-## Markdown
+# Syntax
 
-"easy" HTML
-## Imbed Images
+Write a simple sentance in your R markdown file  
+>Now add some flare to it
+
+Try ` **making text bold ** `
+which should look like this
+
+  **making text bold**
+
+or ` _ ** a combinination ** of different fonts _ `
+
+that should look like this 
+
+ _**a combinination** of different fonts_
+
+use a _backtick_ \` to have something not render
+
+More on Rmarkdown [syntax](https://help.github.com/articles/basic-writing-and-formatting-syntax/#styling-text)
+
+Try rendering with _Knit_
+
+Note if things don't look right - a common problem is not putting a space between line
+so RMarkdown doesnt' know you are on to a new thing - so try adding a return
+
+# Images
 
 <div align="center">
-<img src="../../img/rmd_markdownOverview.png" height=400>
+<img src="../img/Rmarkdown.jpg" height=400>
 </div>
 
-
-Github renders (with [flavor](https://help.github.com/articles/github-flavored-markdown)), eg README.md
-
-## R in Rmarkdown - Chunk
-
-Surround code with 3 backticks with `{r}` in first line
-
+`
 <div align="center">
-<img src="../../img/markdownChunk.png" height=550>
+<img src="../img/Rmarkdown.jpg" height=400>
 </div>
+`
+Pay attention to the path name -R is starting with in your working directory
 
-## R in Rmarkdown - Inline
+# Links
 
-Surround code in single backticks
+you can use '[]' to name and link 
 
-``pi=`r '\x60r pi\x60'` `` evaluates to "pi=`r pi`"
+[Latex](https://en.wikibooks.org/wiki/LaTeX) 
 
-## Equations in Rmarkdown - Chunk
+`
+[Latex](https://en.wikibooks.org/wiki/LaTeX) 
+`
 
-Uses [Latex](https://en.wikibooks.org/wiki/LaTeX) markup language for equations as input. Outputs using [MathJax](https://www.mathjax.org/) JavaScript library for HTML output, native for PDF.
+# Equations in Rmarkdown - Chunk
 
-```
+
+Surrount your math in **$** symbols
+
+Uses [Latex](https://en.wikibooks.org/wiki/LaTeX) markup language for equations as input. 
+
+Some nice examples of commonly used greek symbols and functions
+[more latex](http://www.calvin.edu/~rpruim/courses/m343/F12/RStudio/LatexExamples.html)
+
+
 $$
 \frac{1}{n} \sum_{i=i}^{n} x_{i}
 $$
-```
 
+this came from
+`
 $$
 \frac{1}{n} \sum_{i=i}^{n} x_{i}
 $$
+`
 
-## Equations in Rmarkdown - Inline
+# Including R code
 
-  ```
-  The Arithmetic mean is equal to $\frac{1}{n} \sum_{i=i}^{n} x_{i}$, or the summation of n numbers divided by n.
-  ```
+You can also include R code:
+Use backticks, r, and then give your code _chunk_ a name
 
-The Arithmetic mean is equal to $\frac{1}{n} \sum_{i=i}^{n} x_{i}$, or the summation of n numbers divided by n.
-
-
-## Github Friendly
-
-- Rmarkdown (\*.Rmd) renders as markdown (*.md)
-  
-- easy to see change in simple text files (vs binary / proprietary formats)
-
-
-
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
+```{r conductance, echo=TRUE, eval=TRUE}
 
 
 cc = function(gmax=0.5, LAI=3, b=0.5, optT=24, Tair) {
@@ -137,10 +142,93 @@ plot(res$Tair, res$cc, ylab="Conductance (m/s)",xlab="Air Temperature (C)")
 
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot
+Try playing with echo=TRUE and eval=FALSE
+
+# inline R code
+
+Simple inline R code is also possible, use backticks and starting code  with r
+Lets say you want to evaluate something in line the circumference of a circle is $\pi$ times R**2 
+
+* for a radius of 4 we get `r pi*4**2`
 
 
-## Assigment
+# Output formats
+
+
+"easy" HTML
+
+- _**output**_ various formats:
+    - **html**: share on public website
+    - **pdf**: polished publication
+    - **docx**: share with co-authors to track changes
+    - **slidy_presentation** slides
+    
+- specify this at the top of the R markdown file
+
+- if you add slides (_slidy_presentation_), you can use *** or a header to denote a new slide
+
+- each output format has different options that can also be specified at the top of the R Markdown file
+in the **output:** section
+
+Find these [here](http://rmarkdown.rstudio.com/)
+
+There are many other ways to tailor your R-Markdown - explore!
+
+
+# Some Helpful R functions
+
+Ok now lets do some data analysis and communicate results in R
+Lets go back to our radiation example
+
+Lets imbedded the code in our R document
+
+```{r sunlight, eval=TRUE, echo=TRUE}
+ 
+sunlight = read.table("sun.txt", header=T)
+par(mar=c(5,6,3,2))
+boxplot(sunlight$Kdown_direct~sunlight$month,
+  ylab="Downwelling Solar\n kj/m2/day",
+  xlab="month", col="orange")
+
+```
+
+And lets demo a few useful R functions 
+
+1. _aggregate_
+2. _which.max_
+
+
+```{r moresunlight, eval=TRUE, echo=TRUE}
+
+# total radiation monthly 
+sun.mth = aggregate(sunlight, by=list(sunlight$month, sunlight$year), sum)
+sun.mth[1:3,]
+par(mar=c(5,6,3,2))
+boxplot(sun.mth$Kdown_direct~sun.mth$month,
+  ylab="Downwelling Solar\n kj/m2/mth",
+  xlab="month", col="orange")
+
+# what is the maximum radiation received in any month
+result=which.max(sun.mth$Kdown_direct)
+sun.mth[result,]
+
+# prettier
+sun.mth[result,c("Group.1","Group.2","Kdown_direct")]
+# clean up
+sun.mth$month=as.integer(sun.mth$Group.1)
+sun.mth$year= as.integer(sun.mth$Group.2)
+sun.mth[result,c("month","year","Kdown_direct")]
+
+# and then maybe find average values
+sun.avg = aggregate(sun.mth, by=list(sun.mth$month), mean)
+sun.avg[1:3,]
+
+barplot(sun.avg$Kdown_direct, names=sun.avg$Group.1, ylab="Mean Monthly Solar Radiation")
+
+```
+
+# Assigment
 
 Given a climate data set, do the following tasks and document your work in an R-markdown document and store it in your repository- add the name of the repository to gauchospace
 
@@ -156,18 +244,15 @@ Given a climate data set, do the following tasks and document your work in an R-
 * make at least one edit to your file and commit
 changes
 * make sure your work includes code, headings
-* output your work to a presentation and to a pdf
+* output your work  to a pdf and then to slides
 
 
 
 ## Help
 
-- Rstudio menu Help > [Markdown Quick Reference](http://rmarkdown.rstudio.com/authoring_basics.html)
-- [R Markdown Cheat Sheet](../refs/cheatsheets/rmarkdown-cheatsheet.pdf)
-- [R Markdown Reference Guide](../refs/cheatsheets/rmarkdown-reference.pdf)
-- [Mastering Markdown · GitHub Guides](https://guides.github.com/features/mastering-markdown/)
+- Rstudio menu Help > [Markdown Quick Reference](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf)
+- [R Markdown Cheat Sheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)
 
 ## Further Resources
 
 - [rmarkdown.rstudio.com](http://rmarkdown.rstudio.com/): authoritative reference site
-- [bbest/rmarkdown-example](https://github.com/bbest/rmarkdown-example): example of full manuscript (figures, tables, captions, references using Zotero) as html, pdf, docx
