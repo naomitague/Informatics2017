@@ -1,9 +1,9 @@
 ---
 title: "gitsetup"
 output:
+  slidy_presentation: null
   pdf_document: default
   html_document: default
-  slidy_presentation: null
 ---
 
 ```{r setup, include=FALSE}

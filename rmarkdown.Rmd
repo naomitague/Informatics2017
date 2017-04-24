@@ -3,17 +3,17 @@ title: "Rmarkdown"
 author: "Naomi"
 date: '`r format(Sys.time(), "%Y-%m-%d")`'
 output:
-  pdf_document: default
-  ioslides_presentation: default
-  html_document: default
   slidy_presentation: null
+  ioslides_presentation: default
+  pdf_document: default
+  html_document: default
 subtitle: Environmental Informatics
 ---
 
 # Reproducible research {.flexbox .vcenter}
 
 <div align="center">
-<img src="../img/workflow.png" height=500>
+<img src="img/workflow.png" height=500>
 </div>
 
 # Rmarkdown
@@ -21,7 +21,7 @@ subtitle: Environmental Informatics
 A really useful way to organize, store and present your workflow: the steps that you take in a data analysis project - from input, to analysis, to presentation
 
 <div align="center">
-<img src="../img/Rmarkdown.jpg" height=200>
+<img src="img/Rmarkdown.jpg" height=200>
 </div>
 
 Gandrud (2013) [Reproducible Research with R and Rstudio](http://christophergandrud.github.io/RepResR-RStudio/)
@@ -73,12 +73,12 @@ so RMarkdown doesnt' know you are on to a new thing - so try adding a return
 # Images
 
 <div align="center">
-<img src="../img/Rmarkdown.jpg" height=400>
+<img src="img/Rmarkdown.jpg" height=400>
 </div>
 
 `
 <div align="center">
-<img src="../img/Rmarkdown.jpg" height=400>
+<img src="img/Rmarkdown.jpg" height=400>
 </div>
 `
 Pay attention to the path name -R is starting with in your working directory
