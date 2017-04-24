@@ -1,44 +1,26 @@
 ---
 title: "Rmarkdown"
-author: 'null'
+author: "Naomi"
 date: '`r format(Sys.time(), "%Y-%m-%d")`'
 output:
-  beamer_presentation:
-    incremental: yes
-  ioslides_presentation:
-    incremental: yes
-    lib_dir: libs
-    self_contained: no
-    widescreen: yes
-  slidy_presentation:
-    incremental: yes
+  html_document: default
+  pdf_document: default
 subtitle: Environmental Informatics
 ---
 
 ## Rmarkdown
+
+A really useful way to organize, store and present your workflow: the steps that you take in a data analysis project - from input, to analysis, to presentation
+
 # syntax 
 * headings
-* font
+* fonts
 * equations
 * inserting images
 * R code
-** options
+* linking to website
+* outputing to different formats
 
-# programming fundamentals
-* R refresher
-* data structures
-** array
-** list
-** dataframe
-* constrol structures
-** looping
-** apply sequence
-* writing functions
-
-# assigments
-
-Given a climate data set, read it in to R, write functions to do the following - find wettest and driest years, find wettest and driest springs, order years by winter temperatures, summer temperatures, use these functions to assess whether or not there is a relationships between precipitation and temperature for different seasons - in clude plotting in your relationship and summarize conclusions plot relationships between annual precipitation and spring, summer and winter temperature - summarize results - is
-Summarize results in an R markdown document
 
 
 # Rmarkdown
@@ -46,7 +28,7 @@ Summarize results in an R markdown document
 ## Inspiration {.flexbox .vcenter}
 
 <div align="center">
-<img src="img/Gandrud2013_ReproducibleResearchRstudio_cover.png" height=500>
+<img src="../../img/Gandrud2013_ReproducibleResearchRstudio_cover.png" height=500>
 </div>
 
 Gandrud (2013) [Reproducible Research with R and Rstudio](http://christophergandrud.github.io/RepResR-RStudio/)
@@ -78,7 +60,7 @@ Document, HTML. Knit HMTL button to render the right.
 ## Imbed Images
 
 <div align="center">
-<img src="img/rmd_markdownOverview.png" height=400>
+<img src="../../img/rmd_markdownOverview.png" height=400>
 </div>
 
 
@@ -89,7 +71,7 @@ Github renders (with [flavor](https://help.github.com/articles/github-flavored-m
 Surround code with 3 backticks with `{r}` in first line
 
 <div align="center">
-<img src="img/markdownChunk.png" height=550>
+<img src="../../img/markdownChunk.png" height=550>
 </div>
 
 ## R in Rmarkdown - Inline
@@ -156,6 +138,27 @@ plot(res$Tair, res$cc, ylab="Conductance (m/s)",xlab="Air Temperature (C)")
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+
+## Assigment
+
+Given a climate data set, do the following tasks and document your work in an R-markdown document and store it in your repository- add the name of the repository to gauchospace
+
+ _Tasks_
+
+* graph precipitation and temperature by month, using a box plot
+* find wettest and driest years
+* add two pictures to illustrate what a wet and dry year might look like for the ecosystem of your choice
+* create a new variable that is 1 when its spring, and 2 when its summer, 3 with its fall and 4 when its winter (eg. split your year in to 4, 3 month periods)
+* find wettest and driest seasons
+* graph the relationship between winter precipitation and summer temperature 
+* add some text to describe the graph and comment on why this might be useful to look at
+* make at least one edit to your file and commit
+changes
+* make sure your work includes code, headings
+* output your work to a presentation and to a pdf
+
+
 
 ## Help
 
