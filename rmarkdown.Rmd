@@ -230,11 +230,13 @@ barplot(sun.avg$Kdown_direct, names=sun.avg$Group.1, ylab="Mean Monthly Solar Ra
 
 # Assigment
 
-Given a climate data set, do the following tasks and document your work in an R-markdown document and store it in your repository- add the name of the repository to gauchospace
+Given a climate data set (clim.txt), 
+do the following tasks and document your work in an R-markdown document and store it in your repository- add the name of the repository to gauchospace
 
  _Tasks_
 
-* graph precipitation and temperature by month, using a box plot
+* read in the file **read.table("clim.txt", header=TRUE)**
+* graph precipitation and average temperature by month, using a box plot
 * find wettest and driest years
 * add two pictures to illustrate what a wet and dry year might look like for the ecosystem of your choice
 * create a new variable that is 1 when its spring, and 2 when its summer, 3 with its fall and 4 when its winter (eg. split your year in to 4, 3 month periods)
