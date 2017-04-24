@@ -62,7 +62,6 @@ Lets start by assuming you've set up the project as described above
 * Make a change to ** sun.simpleexample.R **
 * Use diff to see what changed 
      * you must save the file first
-     * note that this file now has an **M** denoting it   has been modified, stage it
 * Commit changes
 * Use history to see how things have changed 
 * Make some more changes to ** sun.simpleexample.R **
@@ -89,6 +88,13 @@ type
 * notice how now in git commit  it will also track your branch in comparison with remote repo
 
 * if you want other people to be able to make changes to your repo, add them as collaborators on the github website for that repo, under settings (see option on left side)
+
+
+# what if you muck things up
+
+__before you commit__
+
+* _git revert_
 
 # Using existing (other people) repositories
 
