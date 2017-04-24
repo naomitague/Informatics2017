@@ -1,6 +1,8 @@
 ---
 title: "gitsetup"
-output: html_document
+output:
+  pdf_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -95,6 +97,20 @@ type
 __before you commit__
 
 * _git revert_
+this is in the git dropdown menu tools; or you can run on the command line
+
+__after you commit__
+
+The following steps allow you to get a previous version of your file back and replace  the existing one
+(be careful you will use your work), in the shell/command line
+
+* _git log_  this shows you the commit #s of your versions
+* _git log --reverse_ (same as above but often easier if you have lots of commits)
+* write down the version number of the file you want to 'bring back'
+* _git reset #commit_ changes will be 'staged' but not committed
+* _git reset #commit # --hard_ same as above but automatically committed;use if you really mucked things up
+
+
 
 # Using existing (other people) repositories
 
